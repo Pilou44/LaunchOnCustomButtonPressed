@@ -6,54 +6,52 @@ ADDED from AndroidManifest.xml:2:1
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0
 	android:versionName
-		ADDED from AndroidManifest.xml:5:5
-		INJECTED from AndroidManifest.xml:0:0
-		INJECTED from AndroidManifest.xml:0:0
-	android:versionCode
-		ADDED from AndroidManifest.xml:4:5
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0
 	xmlns:android
 		ADDED from AndroidManifest.xml:2:11
+	android:versionCode
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
 application
-ADDED from AndroidManifest.xml:7:5
+ADDED from AndroidManifest.xml:5:5
 MERGED from com.android.support:support-v4:21.0.0:16:5
 	android:label
-		ADDED from AndroidManifest.xml:10:9
-	android:allowBackup
 		ADDED from AndroidManifest.xml:8:9
+	android:allowBackup
+		ADDED from AndroidManifest.xml:6:9
 	android:icon
-		ADDED from AndroidManifest.xml:9:9
+		ADDED from AndroidManifest.xml:7:9
 activity#com.freak.fidji.launchoncustom.MainActivity
-ADDED from AndroidManifest.xml:11:9
+ADDED from AndroidManifest.xml:9:9
 	android:label
-		ADDED from AndroidManifest.xml:13:13
+		ADDED from AndroidManifest.xml:11:13
 	android:name
-		ADDED from AndroidManifest.xml:12:13
+		ADDED from AndroidManifest.xml:10:13
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:14:13
+ADDED from AndroidManifest.xml:12:13
 action#android.intent.action.MAIN
-ADDED from AndroidManifest.xml:15:17
+ADDED from AndroidManifest.xml:13:17
 	android:name
-		ADDED from AndroidManifest.xml:15:25
+		ADDED from AndroidManifest.xml:13:25
 category#android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:16:17
+ADDED from AndroidManifest.xml:14:17
 	android:name
-		ADDED from AndroidManifest.xml:16:27
+		ADDED from AndroidManifest.xml:14:27
 receiver#com.freak.fidji.launchoncustom.CustomButtonReceiver
-ADDED from AndroidManifest.xml:19:9
+ADDED from AndroidManifest.xml:17:9
 	android:name
-		ADDED from AndroidManifest.xml:19:19
+		ADDED from AndroidManifest.xml:17:19
 intent-filter#com.parrot.action.CUSTOM_BUTTON_1+com.parrot.action.CUSTOM_BUTTON_2
-ADDED from AndroidManifest.xml:20:13
+ADDED from AndroidManifest.xml:18:13
 action#com.parrot.action.CUSTOM_BUTTON_1
-ADDED from AndroidManifest.xml:21:17
+ADDED from AndroidManifest.xml:19:17
 	android:name
-		ADDED from AndroidManifest.xml:21:25
+		ADDED from AndroidManifest.xml:19:25
 action#com.parrot.action.CUSTOM_BUTTON_2
-ADDED from AndroidManifest.xml:22:17
+ADDED from AndroidManifest.xml:20:17
 	android:name
-		ADDED from AndroidManifest.xml:22:25
+		ADDED from AndroidManifest.xml:20:25
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.android.support:support-v4:21.0.0:15:5
