@@ -15,7 +15,7 @@
         android:paddingRight="48dp"
         android:background="#00000000">
         <ImageButton
-            android:id="@+id/app1_icone"
+            android:id="@+id/app1_icon"
             android:layout_width="72px"
             android:layout_height="72px"
             android:src="@drawable/none"
@@ -30,7 +30,7 @@
         android:paddingRight="48dp"
         android:background="#00000000">
         <ImageButton
-            android:id="@+id/app2_icone"
+            android:id="@+id/app2_icon"
             android:layout_width="72px"
             android:layout_height="72px"
             android:src="@drawable/none"

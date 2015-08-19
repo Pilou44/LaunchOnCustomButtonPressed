@@ -2,41 +2,30 @@ package com.freak.fidji.launchoncustom;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by GBeguin on 17/11/2014.
- */
 public class ActivityDialog extends DialogFragment {
 
-    ActivityAdapter adapter;
     private int buttonNumber = -1;
     private List<ResolveInfo> resInfos;
     private ActivityDialogListener listener;
@@ -48,7 +37,7 @@ public class ActivityDialog extends DialogFragment {
     public class ActivityAdapter extends ArrayAdapter<String> {
 
         private final Context context;
-        private List<ResolveInfo> activities;
+        private final List<ResolveInfo> activities;
         private final PackageManager pm = getActivity().getPackageManager();
 
         public ActivityAdapter(Context context, List<ResolveInfo> resInfos) {
@@ -93,16 +82,17 @@ public class ActivityDialog extends DialogFragment {
 
     }
 
+    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
-        Log.d("ActivityDialog", "Retreive application list with other method");
+        Log.d("ActivityDialog", "Retrieve application list with other method");
         final PackageManager packageManager = getActivity().getPackageManager();
         Intent intent = new Intent(Intent.ACTION_MAIN, null);
         intent.addCategory(Intent.CATEGORY_LAUNCHER);
         resInfos = packageManager.queryIntentActivities(intent, 0);
         Log.d("ActivityDialog", resInfos.size() + " applications found");
-        adapter = new ActivityAdapter(getActivity(), resInfos);
+        ActivityAdapter adapter = new ActivityAdapter(getActivity(), resInfos);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         // Set the dialog title
