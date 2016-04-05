@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="key_none"       translatable="false">none</string>
+    <string name="key_package"    translatable="false">package</string>
+    <string name="key_package_1"  translatable="false">package1</string>
+    <string name="key_package_2"  translatable="false">package2</string>
+    <string name="key_class"      translatable="false">class</string>
+    <string name="key_class_1"    translatable="false">class1</string>
+    <string name="key_class_2"    translatable="false">class2</string>
+    <string name="key_activity_1" translatable="false">activity1</string>
+    <string name="key_activity_2" translatable="false">activity2</string>
+
     <string name="app_name">Launch On Custom Button Pressed</string>
     <string name="pick_app">Choose an application</string>
     <string name="cancel">Cancel</string>
-
 </resources>

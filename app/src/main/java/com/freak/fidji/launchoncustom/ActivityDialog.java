@@ -101,8 +101,8 @@ public class ActivityDialog extends DialogFragment {
             public void onClick(DialogInterface dialog, int item) {
                 SharedPreferences preferences = getActivity().getSharedPreferences(MainActivity.PREFERENCE_NAME, 0);
                 SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("package" + buttonNumber, resInfos.get(item).activityInfo.packageName);
-                editor.putString("class" + buttonNumber, resInfos.get(item).activityInfo.name);
+                editor.putString(getActivity().getString(R.string.key_package) + buttonNumber, resInfos.get(item).activityInfo.packageName);
+                editor.putString(getActivity().getString(R.string.key_class) + buttonNumber, resInfos.get(item).activityInfo.name);
                 editor.apply();
                 dialog.dismiss();
 

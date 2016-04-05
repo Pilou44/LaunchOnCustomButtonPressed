@@ -31,7 +31,7 @@ public class MainActivity extends FragmentActivity implements ActivityDialogList
                 ActivityDialog dialog = new ActivityDialog();
                 dialog.setButton(1);
                 dialog.addActivityDialogListener(MainActivity.this);
-                dialog.show(getSupportFragmentManager(), "activity1");
+                dialog.show(getSupportFragmentManager(), getString(R.string.key_activity_1));
             }
         });
         app2Icon = (ImageButton) findViewById(R.id.app2_icon);
@@ -41,7 +41,7 @@ public class MainActivity extends FragmentActivity implements ActivityDialogList
                 ActivityDialog dialog = new ActivityDialog();
                 dialog.setButton(2);
                 dialog.addActivityDialogListener(MainActivity.this);
-                dialog.show(getSupportFragmentManager(), "activity2");
+                dialog.show(getSupportFragmentManager(), getString(R.string.key_activity_2));
             }
         });
 
@@ -60,9 +60,9 @@ public class MainActivity extends FragmentActivity implements ActivityDialogList
         Log.i("MainActivity", "Refresh button " + buttonNumber);
         SharedPreferences preferences = getSharedPreferences(PREFERENCE_NAME, 0);
         if (buttonNumber == 1) {
-            ComponentName component1 = new ComponentName(preferences.getString("package1", "none"), preferences.getString("class1", "none"));
+            ComponentName component1 = new ComponentName(preferences.getString(getString(R.string.key_package_1), getString(R.string.key_none)), preferences.getString(getString(R.string.key_class_1), getString(R.string.key_none)));
 
-            if (component1.getPackageName().equals("none")){
+            if (component1.getPackageName().equals(getString(R.string.key_none))){
                 app1Icon.setImageResource(R.drawable.none);
             }
             else {
@@ -91,9 +91,9 @@ public class MainActivity extends FragmentActivity implements ActivityDialogList
             }
         }
         else if (buttonNumber == 2) {
-            ComponentName component2 = new ComponentName(preferences.getString("package2", "none"), preferences.getString("class2", "none"));
+            ComponentName component2 = new ComponentName(preferences.getString(getString(R.string.key_package_2), getString(R.string.key_none)), preferences.getString(getString(R.string.key_class_2), getString(R.string.key_none)));
 
-            if (component2.getPackageName().equals("none")){
+            if (component2.getPackageName().equals(getString(R.string.key_none))){
                 app2Icon.setImageResource(R.drawable.none);
             }
             else {

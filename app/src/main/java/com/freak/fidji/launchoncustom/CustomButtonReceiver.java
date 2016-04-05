@@ -11,6 +11,9 @@ public class CustomButtonReceiver extends BroadcastReceiver {
     private static final String TAG = CustomButtonReceiver.class.getSimpleName();
     private static final boolean DEBUG = true;
 
+    private static final String ACTION_BUTTON_1 = "com.parrot.action.CUSTOM_BUTTON_1";
+    private static final String ACTION_BUTTON_2 = "com.parrot.action.CUSTOM_BUTTON_2";
+
     @Override
     public void onReceive(Context context, Intent intent) {
         if (DEBUG)
@@ -18,17 +21,17 @@ public class CustomButtonReceiver extends BroadcastReceiver {
         SharedPreferences preferences = context.getSharedPreferences(MainActivity.PREFERENCE_NAME, 0);
         ComponentName component = null;
         String action = "";
-        if (intent.getAction().equals("com.parrot.action.CUSTOM_BUTTON_1")) {
+        if (intent.getAction().equals(ACTION_BUTTON_1)) {
             if (DEBUG)
                 Log.i(TAG, "Button 1");
-            component = new ComponentName(preferences.getString("package1", "none"), preferences.getString("class1", "none"));
-            action = preferences.getString("package1", "none");
+            action = preferences.getString(context.getString(R.string.key_package_1), context.getString(R.string.key_none));
+            component = new ComponentName(action, preferences.getString(context.getString(R.string.key_class_1), context.getString(R.string.key_none)));
         }
-        else if (intent.getAction().equals("com.parrot.action.CUSTOM_BUTTON_2")) {
+        else if (intent.getAction().equals(ACTION_BUTTON_2)) {
             if (DEBUG)
                 Log.i(TAG, "Button 2");
-            component = new ComponentName(preferences.getString("package2", "none"), preferences.getString("class2", "none"));
-            action = preferences.getString("package2", "none");
+            action = preferences.getString(context.getString(R.string.key_package_2), context.getString(R.string.key_none));
+            component = new ComponentName(action, preferences.getString(context.getString(R.string.key_class_2), context.getString(R.string.key_none)));
         }
         if (component != null) {
             Intent newIntent = new Intent();
